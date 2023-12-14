@@ -36,3 +36,35 @@ Se a caterogia for "Remessa Parcial", o titulo deve conter o nome de um mês(Jan
 
 
 Boa sorte!
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+PARA RODAR É NECESSARIO
+
+Crie o Arquivo .env
+```sh
+cp .env.example .env
+
+Suba os containers do projeto
+```sh
+docker-compose up -d
+```
+
+Acessar o container
+```sh
+docker-compose exec app bash
+```
+
+Instalar as dependências do projeto
+```sh
+composer install
+```
+
+Gerar a key do projeto Laravel
+```sh
+php artisan key:generate
+```
+
+Gerar a migrate e seeders
+```sh
+php artisan migrate:fresh --seed
+```
+

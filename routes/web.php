@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\DocumentsController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,3 +17,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/upload', [DocumentsController::class, 'showForm'])->name('upload.form');
+Route::post('/upload', [DocumentsController::class, 'handleUpload'])->name('upload.post');
+
+Route::get('/queue-start', [DocumentsController::class, 'process'])->name('queue.start');
